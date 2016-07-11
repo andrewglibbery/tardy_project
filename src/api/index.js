@@ -28,9 +28,23 @@ router.post('/classes', function(req, res) {
 	
 });
 
+router.put('/classes/:id', function(req, res) {
+	var id = req.params.id;
+	var class_name = req.body;
+	if(class_name && class_name._id !== id) {
+		return res.status(500).json({err: "Ids don't match!"})
+	}
+	Class.findByIdAndUpdate(id, class_name, {new: true}, function(err, class_name){
+		if(err) {
+			return res.status(500).json({err: err.message});
+		}
+		res.json({'classes': class_name, message: 'Class Updated'});
+	})
+	
+});
 
 
-// TODO: EDIT classes
+
 
 // TODO: Delete classes
 
