@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/andrewglibbery/tardy_project/issues"
   },
-  "homepage": "https://github.com/andrewglibbery/tardy_project#readme"
+  "homepage": "https://github.com/andrewglibbery/tardy_project#readme",
+  "dependencies": {
+    "body-parser": "1.15.2",
+    "mongoose": "4.5.3"
+  }
 }
