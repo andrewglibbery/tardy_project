@@ -4,16 +4,20 @@
 	<title>Tardy Tracker</title>
 	<link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
 	
-	
 </head>
-<body>
+<body ng-app="tardyTrackerApp">
+	<h1>Glibbery's Tardy Tracker</h1>
+		
+			<div ng-controller="mainCtrl" class="list">
+				<a href="" ng-click=" creating = !creating">Create A Class</a><br>
 
-<h1>Hello World!</h1>
-<div>
-	<input type="text" name="new_class">
-	<label>Add Class</label>
-</div>
-
+				<input ng-change="class.edited = true" ng-blur="creating = false;" ng-show="creating" ng-model="class.name" type="text" name="class_input">
+				<label ng-click="creating = true;" ng-hide="creating">{{class.name}}</label>
+				
+			</div>
+		
+	<script src="vendor/angular.js" type="text/javascript"></script>
+	<script src="scripts/app.js" type="text/javascript"></script>	
 	
 </body>
 </html>
